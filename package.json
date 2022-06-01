@@ -1,0 +1,23 @@
+{
+  "name": "jseventbus",
+  "version": "1.0.0",
+  "description": "Simple JS event bus",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alisterg/JsEventBus.git"
+  },
+  "author": "alisterg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alisterg/JsEventBus/issues"
+  },
+  "homepage": "https://github.com/alisterg/JsEventBus#readme",
+  "devDependencies": {
+    "jest": "^28.1.0",
+    "prettier": "^2.6.2"
+  }
+}
