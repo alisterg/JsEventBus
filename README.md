@@ -1,4 +1,4 @@
-# JsEventBus
+# TsBus
 
 A minimal event bus for you to implement the [pub/sub](https://en.wikipedia.org/wiki/Publish–subscribe_pattern)
 pattern with.
@@ -7,13 +7,14 @@ I have made it a class so you can create a new bus per use case.
 
 - Zero dependencies
 - Simple & easy to use
+- Feature complete
 
 # How to use
 
 Assuming we have the following...
 
 ```js
-const salesEventBus = new EventBus();
+const salesEventBus = new TsBus();
 
 function handler(eventData) {
   console.log("Received event: ", eventData);

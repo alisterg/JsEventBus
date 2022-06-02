@@ -1,12 +1,12 @@
-class EventBus {
-  events = {};
+export class TsBus {
+  private events: Record<string, ((eventData?: any) => void)[]> = {};
 
-  on(eventName, handler) {
+  on(eventName: string, handler: (eventData?: any) => void) {
     this.events[eventName] = this.events[eventName] || [];
     this.events[eventName].push(handler);
   }
 
-  off(eventName, handler) {
+  off(eventName: string, handler: (eventData?: any) => void) {
     if (!this.events[eventName]) return;
 
     for (let i = 0; i < this.events[eventName].length; i++) {
@@ -18,7 +18,7 @@ class EventBus {
     }
   }
 
-  once(eventName, handler) {
+  once(eventName: string, handler: (eventData?: any) => void) {
     const runOnce = () => {
       this.off(eventName, runOnce);
       handler();
@@ -26,9 +26,7 @@ class EventBus {
     this.on(eventName, runOnce);
   }
 
-  emit(eventName, eventData) {
+  emit(eventName: string, eventData?: any) {
     if (this.events[eventName]) this.events[eventName].forEach((handler) => handler(eventData));
   }
 }
-
-module.exports = EventBus;

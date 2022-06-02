@@ -1,23 +1,30 @@
 {
-  "name": "jseventbus",
+  "name": "@alister.codes/tsbus",
   "version": "1.0.0",
-  "description": "Simple JS event bus",
-  "main": "index.js",
+  "description": "Actually simple TS event bus with no dependencies ever",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "jest"
+    "test": "ts-jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alisterg/JsEventBus.git"
+    "url": "git+https://github.com/alisterg/TsBus.git"
   },
   "author": "alisterg",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/alisterg/JsEventBus/issues"
+    "url": "https://github.com/alisterg/TsBus/issues"
   },
-  "homepage": "https://github.com/alisterg/JsEventBus#readme",
+  "keywords": [
+    "event",
+    "pubsub"
+  ],
+  "homepage": "https://github.com/alisterg/TsBus#readme",
   "devDependencies": {
+    "@types/jest": "^27.5.2",
     "jest": "^28.1.0",
-    "prettier": "^2.6.2"
+    "prettier": "^2.6.2",
+    "ts-jest": "^28.0.3"
   }
 }
