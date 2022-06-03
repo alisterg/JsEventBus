@@ -35,7 +35,7 @@ salesEventBus.on("MY_EVENT", handler);
 ```ts
 // Emit the event (as many times as you want). `handler` is called each time the event is emitted.
 salesEventBus.emit("MY_EVENT");
-salesEventBus.emit("MY_EVENT");
+salesEventBus.emit("MY_EVENT", "any data"); // Add a second argument to send data (any type)
 ```
 
 ## .off
