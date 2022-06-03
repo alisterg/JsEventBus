@@ -1,4 +1,4 @@
-import { TsBus } from "./tsBus";
+import { TsBus } from "../src";
 
 describe("TsBus class", function () {
   const events = {
