@@ -11,9 +11,7 @@ I have made it a class so you can create a new bus per use case.
 
 # How to use
 
-Assuming we have the following...
-
-```js
+```ts
 const salesEventBus = new TsBus();
 
 function handler(eventData) {
@@ -23,26 +21,28 @@ function handler(eventData) {
 
 ## .on
 
-```js
-// Register the event
+**Register** event handlers with `.on`. You can register multiple handlers for a specific event.
+You can register a handler with multiple events.
+
+```ts
 salesEventBus.on("MY_EVENT", handler);
 ```
 
-You can register multiple handlers for a specific event. You can register a handler with multiple events.
-
 ## .emit
 
-```js
+**Emit** events with `.emit`. Each handler function registered with the event name is called.
+
+```ts
 // Emit the event (as many times as you want). `handler` is called each time the event is emitted.
 salesEventBus.emit("MY_EVENT");
 salesEventBus.emit("MY_EVENT");
 ```
 
-As long as a handler is registered for an event, it will be called every time you emit the event.
-
 ## .off
 
-```js
+**De-register** event handlers with `.off`. Handlers that are currently running will not be terminated.
+
+```ts
 salesEventBus.off("MY_EVENT", handler);
 // Handler will *not* be called again
 salesEventBus.emit("MY_EVENT");
@@ -50,9 +50,9 @@ salesEventBus.emit("MY_EVENT");
 
 ## .once
 
-Use `EventBus.once` to call a handler only the first time the relevant event is emitted.
+Use `.once` to call a handler only the first time the relevant event is emitted.
 
-```js
+```ts
 // Register the event
 salesEventBus.once("MY_EVENT", handler);
 salesEventBus.emit("MY_EVENT");
